@@ -1,0 +1,256 @@
+version: '3'
+
+services:
+  container1:
+    container_name: container1
+    image: my_image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      my_network:
+        ipv4_address: 192.168.64.2
+    environment:
+      - CONTAINER_NAME=container1 
+    volumes:
+      - ./profiling_engine.log:/logging/profiling_engine.log
+    cpus: 1.0
+
+  container2:
+    container_name: container2
+    image: my_image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      my_network:
+        ipv4_address: 192.168.64.3
+    environment:
+      - CONTAINER_NAME=container2
+    volumes:
+      - ./profiling_engine.log:/logging/profiling_engine.log
+    cpus: 1.0
+
+  container3:
+    container_name: container3
+    image: my_image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      my_network:
+        ipv4_address: 192.168.64.4
+    environment:
+      - CONTAINER_NAME=container3
+    volumes:
+      - ./profiling_engine.log:/logging/profiling_engine.log
+    cpus: 1.0
+
+  container4:
+    container_name: container4
+    image: my_image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      my_network:
+        ipv4_address: 192.168.64.6
+    cpus: 1.0
+
+  container5:
+    container_name: container5
+    image: my_image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      my_network:
+        ipv4_address: 192.168.64.7
+    cpus: 1.0
+
+  container6:
+    container_name: container6
+    image: my_image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      my_network:
+        ipv4_address: 192.168.64.8
+    cpus: 1.0
+
+  container7:
+    container_name: container7
+    image: my_image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      my_network:
+        ipv4_address: 192.168.64.9
+    cpus: 1.0
+
+  container8:
+    container_name: container8
+    image: my_image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      my_network:
+        ipv4_address: 192.168.64.10
+    cpus: 1.0
+
+  container9:
+    container_name: container9
+    image: my_image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      my_network:
+        ipv4_address: 192.168.64.11
+    cpus: 1.0
+
+  container10:
+    container_name: container10
+    image: my_image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      my_network:
+        ipv4_address: 192.168.64.12
+    cpus: 1.0
+  
+  container11:
+    container_name: container11
+    image: my_image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      my_network:
+        ipv4_address: 192.168.64.13
+    cpus: 1.0
+
+  container12:
+    container_name: container12
+    image: my_image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      my_network:
+        ipv4_address: 192.168.64.14
+    cpus: 1.0
+
+  container13:
+    container_name: container13
+    image: my_image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      my_network:
+        ipv4_address: 192.168.64.15
+    cpus: 1.0
+
+  container14:
+    container_name: container14
+    image: my_image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      my_network:
+        ipv4_address: 192.168.64.16
+    cpus: 1.0
+
+  container15:
+    container_name: container15
+    image: my_image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      my_network:
+        ipv4_address: 192.168.64.17
+    cpus: 1.0
+
+  # container16:
+  #   container_name: container16
+  #   image: my_image:latest
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   networks:
+  #     my_network:
+  #       ipv4_address: 192.168.64.18
+  #   cpus: 1.0
+
+  # container17:
+  #   container_name: container17
+  #   image: my_image:latest
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   networks:
+  #     my_network:
+  #       ipv4_address: 192.168.64.19
+  #   cpus: 1.0
+
+  # container18:
+  #   container_name: container18
+  #   image: my_image:latest
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   networks:
+  #     my_network:
+  #       ipv4_address: 192.168.64.20
+  #   cpus: 1.0
+
+  # container19:
+  #   container_name: container19
+  #   image: my_image:latest
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   networks:
+  #     my_network:
+  #       ipv4_address: 192.168.64.21
+  #   cpus: 1.0
+
+  # container20:
+  #   container_name: container20
+  #   image: my_image:latest
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   networks:
+  #     my_network:
+  #       ipv4_address: 192.168.64.22
+  #   cpus: 1.0
+
+
+  loadbalancer:
+    container_name: loadbalancer
+    image: docker_image
+    build:
+      context: .
+      dockerfile: loadbalancer_Dockerfile
+    networks:
+      my_network: 
+        ipv4_address: 192.168.64.5
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock  # Mount the Docker socket into the container
+      - ./profiling_engine.log:/logging/profiling_engine.log
+    
+networks:
+  my_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.64.0/24

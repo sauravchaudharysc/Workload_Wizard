@@ -1,0 +1,14 @@
+
+Containers = 3 Type = 'cpu' Algo = 'cpu_load' Throughput: 23.685017742711484 rps
+Containers = 5 Type = 'cpu' Algo = 'cpu_load' Throughput: 14.988840484232393 rps
+Containers = 7 Type = 'cpu' Algo = 'cpu_load' Throughput: 15.3106403793434 rps
+Containers = 10 Type = 'cpu' Algo = 'cpu_load' Throughput: 16.56941237168179 rps
+Containers = 15 Type = 'cpu' Algo = 'cpu_load' Throughput: 20.815714377881555 rps
+Containers = 20 Type = 'cpu' Algo = 'cpu_load' Throughput: 4.26964161277534 rps
+
+Containers = 3 Type = 'cpu' Algo = 'round_robin' Throughput: 31.248993738361172 rps
+Containers = 5 Type = 'cpu' Algo = 'round_robin' Throughput: 77.5285812780383 rps
+Containers = 7 Type = 'cpu' Algo = 'round_robin' Throughput: 94.57696561630105 rps
+Containers = 10 Type = 'cpu' Algo = 'round_robin' Throughput: 105.16270329292861 rps
+Containers = 15 Type = 'cpu' Algo = 'round_robin' Throughput: 90.48067340009233 rps
+Containers = 20 Type = 'cpu' Algo = 'round_robin' Throughput: 62.27969634537929 rps
